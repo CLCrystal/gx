@@ -2,19 +2,29 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.5,minimum-scale=0.5,user-scalable=no">
 		<title></title>
 		<link rel="stylesheet" href="css/bootstrap.css"/>
+		<style>
+			 .selected{font-weight:bold; background: #ff99cc; color:#fff;}
+		</style>
 	</head>
 	<body>
 		<ul class="nav nav-pills nav-stacked">
-			<li role="presentation" class="active"><a>Home</a></li>
-			<li><a>Profile</a></li>
+			<li role="presentation"><a target="center" href="center.html" class="">Home</a></li>
+			<li><a target="center" href="relation.html">Profile</a></li>
 			<li><a>Message</a></li>
 			<li><a>Download</a></li>
 		</ul>
 	<script type="text/javascript" src="js/jquery-3.3.1.js" ></script>
 	<script type="text/javascript" src="js/bootstrap.js" ></script>
+	<script>
+		$(function(){
+		    $(".nav-pills li").click(function() {
+		        $(this).siblings('li').removeClass('selected');  // 删除其他兄弟元素的样式
+		        $(this).addClass('selected');                            // 添加当前元素的样式
+		    });
+		}); 
+	</script>
 	</body>
-	
 </html>
